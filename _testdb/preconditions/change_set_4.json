@@ -1,0 +1,47 @@
+{
+  "databaseChangeLog": [
+    {
+      "preConditions": [
+        {
+          "sqlCheck": {
+            "expectedResult": "t",
+            "sql": "SELECT EXISTS(SELECT FROM information_schema.tables WHERE table_schema = 'public' AND table_name = 'test1');"
+          }
+        }
+      ]
+    },
+    {
+      "changeSet": {
+        "id": 5,
+        "author": "zhivov_oa_json",
+        "changes": {
+          "createTable": {
+            "tableName": "test_json",
+            "columns": [
+              {
+                "column": {
+                  "name": "id",
+                  "type": "int",
+                  "autoIncrement": true,
+                  "constraints": {
+                    "primaryKey": true,
+                    "nullable": false
+                  }
+                }
+              },
+              {
+                "column": {
+                  "name": "name",
+                  "type": "varchar(255)",
+                  "constraints": {
+                    "nullable": true
+                  }
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

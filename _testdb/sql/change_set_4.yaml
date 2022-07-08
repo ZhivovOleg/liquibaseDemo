@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: zhivov_oa_yaml
+      labels: "yaml_create_table"
+      comment: "yaml create table"
+      changes:
+        - tagDatabase:
+            tag: yaml_tag
+        - createTable:
+            tableName: test_yaml
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
