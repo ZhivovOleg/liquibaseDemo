@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
-      id: 4
-      author: zhivov_oa_yaml
+      id: 1
+      author: zhivov_oa
       labels: "yaml_create_table"
       comment: "yaml create table"
       changes:

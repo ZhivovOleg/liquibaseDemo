@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - preConditions:
+      - onFail: WARN
+      - onError: HALT
+      - and:
+          - dbms:
+              type: "postgresql"
+          - tableExists:
+              tableName: test_yaml
+          - sqlCheck:
+              expectedResult: 0
+              sql: select count(*) from test_yaml
+  - changeSet:
+      id: 2
+      author: zhivov_oa
+      labels: "update_table"
+      comment: "update table"
+      rollback: alter table test_yaml drop column age
+      changes:
+        - tagDatabase:
+            tag: alter_table
+        - addColumn:
+            tableName: test_yaml
+            columns:
+              - column:
+                  name: age
+                  type: numeric
