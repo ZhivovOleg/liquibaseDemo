@@ -10,13 +10,13 @@
 В файле миграции должны быть заданы поля:
 ```yaml
 - changeSet:
-    author: "zhivov_oa"
-    comment: "<ссылка на задачу в гитлабе>
+    author: "author@domain"
+    comment: "<ссылка на задачу в гитлабе>"
 ```
 <br />
 Тогда в БД можно выполнить запрос вида:
 ```sql
-SELECT * FROM databasechangelog WHERE author=<имя разработчика>
+SELECT * FROM databasechangelog WHERE author='author@domain'
 ```
 чтобы получить все миграции от разработчика 
 
