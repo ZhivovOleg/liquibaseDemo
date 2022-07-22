@@ -52,4 +52,9 @@ logLevel: INFO
 
 # FAQ
 
-[Ответы на базовые вопросы](./workflow/faq.md)
+[Ответы на базовые вопросы](./faq.md)
+
+# Use cases questions
+
+[Примеры из практики](./useCases.md)
+
