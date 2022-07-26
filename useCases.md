@@ -97,6 +97,22 @@
 
 В зависимости от особенностей ситуации можно использовать [labels](https://docs.liquibase.com/concepts/changelogs/attributes/labels.html) или [contexts](https://docs.liquibase.com/concepts/changelogs/attributes/contexts.html), подробный разбор что лучше подходит для конкретной ситуации есть в [официальной документации](https://www.liquibase.com/blog/contexts-vs-labels)
 
+## Репликация прод БД в тест
 
+**Answer:**
 
+С помощью [contexts](https://docs.liquibase.com/concepts/changelogs/attributes/contexts.html) миграции, которые предназначены только для теста или только для прода помечаются соответственно.
+
+## Релизы в гитлабе, план релизов
+*Как поступать, если требуется сложный план выкладки, например сначала выложить первую часть миграций с определенной меткой, затем обновить часть сервисов, затем следующую часть миграций и т.д.*
+
+**Answer:**
+
+Для сложных алгоритмов разумно использовать предназначенные для этого инструменты - [jenkins](https://www.jenkins.io) и [ansible](https://www.ansible.com)
+
+## Релизы в коробку на чужой изолированный контур
+
+**Answer:**
+
+Аналогично предыдущему пункту, для подготовки и выполнения развертывания используются [jenkins](https://www.jenkins.io) и [ansible](https://www.ansible.com)
 
